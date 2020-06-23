@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+.main-header {
+
+    width: 100%; /* though block-level is default anyway */
+    position: fixed;
+    top: 0; 
+    left: 0;
+    /* The two above needed if HTML margin is not 0; */
+    background: #2ddf5c;
+    padding: 8px 16px;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-header__brand {
+    text-decoration: none;
+    color: #0e4f1f;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 74px); /* 100% of whole line minus 49 pixels of 
+    the div in header. spaces around " - " matter. 
+    Had to add extra pixels because when you render the page
+    it include white space between the </div> and <nav> tags in
+    the header*/
+    vertical-align: middle;
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* ensures there are no bullet points 
+    but setting padding should have taken care of this*/
+}
+.main-nav__item {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+.main-nav__item a { /* though a class would be slightly faster for large apps */
+    color: #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+.main-nav__item a:hover, 
+.main-nav__item a:active {
+    color: white;
+    border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a { 
+    /* property order must be the same as ".main-nav__item--cta a"
+    because this is overriding it. */
+    color: white;
+    background: #ff1b68;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover, 
+.main-nav__item--cta a:active {
+    /* property order must be the same as 
+    ".main-nav__item--cta a:hover" and
+    ".main-nav__item--cta a:active"
+    because this is overriding it. */
+    color: #ff1b68;
+    background: white;
+    border: none;
+
+}
+
+.main-footer {
+    background: black;
+    padding: 32px;
+    margin-top: 48px;
+}
+
+.main-footer__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.main-footer__link {
+    display: inline-block;
+    margin: 0 16px;
+}
+.main-footer__link a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+    color: #ccc;
+}
+
+.button {
+    background: #0e4f1f;
+    color: white;
+    font: inherit; /* now inherits font-family;
+    /* forces inherited styles to be applied rather than
+    using browser defaults */
+    border: 1.5px solid #0e4f1f;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+    background: white;
+    color: #0e4f1f;
+}
+
+.button:focus {
+    outline: none;
+}
